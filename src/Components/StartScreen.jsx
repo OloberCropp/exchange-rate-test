@@ -20,7 +20,16 @@ const StartScreen = ({chosenOnes, inputValue, spreadInputData, refreshRates}) =>
                 </div>
 
                 <div className="StartScreen__Currencies">
-                    <CurrencyInput curName='Белорусский Рубль' abbreviation='BYN' rate={1} curScale={1} inputValue={inputValue} spreadInputData={spreadInputData} />
+
+                    <CurrencyInput 
+                    curName='Белорусский рубль' 
+                    abbreviation='BYN' 
+                    rate={1} 
+                    curScale={1} 
+                    inputValue={inputValue} 
+                    spreadInputData={spreadInputData} 
+                    />
+
                     {chosenOnes.map((cur, index) => {
                         return <CurrencyInput 
                         key={index} 

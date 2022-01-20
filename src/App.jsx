@@ -54,8 +54,23 @@ function App() {
 
         <Route path='/*' element={<Layout />} >
 
-          <Route path='/*' element={ <StartScreen currenciesList={currenciesList} chosenOnes={rates} spreadInputData={inputData} inputValue={(e)=>setInputData(() => e )} refreshRates={()=>setRefresh(!refresh)} />} />
-          <Route path='settings' element={ <Settings currenciesList={currenciesList} addCurrency={(e)=>{setChosenOnes([...chosenOnes, e])}} rates={rates} newRates={(e)=>setRates(e)} />} />
+          <Route path='/*' element={ <StartScreen 
+            currenciesList={currenciesList} 
+            chosenOnes={rates} 
+            spreadInputData={inputData} 
+            inputValue={(e)=>setInputData(() => e)} 
+            refreshRates={()=>setRefresh(!refresh)} 
+            />} 
+          />
+          
+          <Route path='settings' element={ <Settings 
+            currenciesList={currenciesList} 
+            addCurrency={(e)=>{setChosenOnes([...chosenOnes, e])}} 
+            rates={rates} 
+            newRates={(e)=>setRates(e)} 
+            />} 
+          />
+          
           <Route path='*' element={ <NotFound /> } />
         
         </Route>

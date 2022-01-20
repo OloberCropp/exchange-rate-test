@@ -125,6 +125,11 @@ header{
                 height: 100%;
                 font-size: 1.3rem;
                 align-items: center;
+                transition: all .3s ease-in-out;
+            }
+
+            .nav__btnRight:active{
+                width: 100px;
             }
         }
     }

@@ -10,7 +10,7 @@ const Footer = () => {
 
                 <span>
 
-                    <label>Telegram</label>
+                    <label>Telegram:</label>
                     <h3 className='contact'>@InNomeneDeorum</h3>
                 </span>
 

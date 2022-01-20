@@ -8,7 +8,6 @@ const SearchBar = ({currenciesList, addCurrency}) => {
 
     const handleClosing = () => {
         !mouseOnDropdown && setSearchOpen(false)
-        console.log("hanglingclose");
     }
 
     return (
@@ -19,10 +18,17 @@ const SearchBar = ({currenciesList, addCurrency}) => {
             <div className='dropDown' onMouseEnter={()=>setMouseOnDropdown(true)} onMouseLeave={()=>setMouseOnDropdown(false)}>
 
                 {searchOpen && currenciesList.filter(cur => { 
-                    return cur.Cur_Abbreviation.toLowerCase().includes(searchValue.toLowerCase()) || cur.Cur_Name.toLowerCase().includes(searchValue.toLowerCase());
+                    return cur.Cur_Abbreviation.toLowerCase().includes(searchValue.toLowerCase()) || 
+                        cur.Cur_Name.toLowerCase().includes(searchValue.toLowerCase());
                 })
                 .map(cur => {
-                    return  <div onClick={()=>{addCurrency(cur.Cur_ID); setSearchOpen(false)}} className='list__cur' key={cur.Cur_ID}> 
+                    return  <div onClick={()=>{
+                                addCurrency(cur.Cur_ID); 
+                                setSearchOpen(false)
+                            }} 
+                            className='list__cur' 
+                            key={cur.Cur_ID
+                            }> 
                                 <h3>{cur.Cur_Abbreviation}</h3> 
                                 <h3>{cur.Cur_Name}</h3> 
                             </div>
