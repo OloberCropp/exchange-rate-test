@@ -1,0 +1,317 @@
+// $bgColor: linear-gradient(rgb(233, 0, 0),rgba(255, 255, 255, 0), rgb(0, 193, 0));
+$bgColor: rgb(40, 40, 40);
+$fontColor: rgb(238, 255, 252);
+$additionalColor: rgb(189, 208, 255);
+$bgGradientDark: linear-gradient(45deg, rgb(115, 115, 220), rgb(197, 172, 247));
+$bgGradientLight: linear-gradient(180deg, rgb(247, 254, 255), rgb(227, 226, 255));
+
+
+
+*, *:before, *:after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+}
+
+h1, h2, h3, h4, p{
+    color: inherit
+}
+
+a, li{
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
+
+input:focus, input:hover{
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.App{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background: $bgColor;
+    color: $fontColor;
+}
+
+.container{
+    width: clamp(50%, 1200px, 96%);
+    margin: 0 auto;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    padding: .5rem 1rem;
+    width: fit-content;
+    height: fit-content;
+    background: $additionalColor;
+    color: $bgColor;
+    border-radius: .3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+    background: $bgGradientDark;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+
+    h1{
+        font-weight: 400;
+    }
+}
+
+.StartScreen{
+    background: $bgGradientLight;
+    min-height: 500px;
+    padding: 2rem 0;
+    height: fit-content;
+    box-shadow: 0 0 2rem 1rem black;
+
+    *{
+        color:$bgColor;
+    }
+
+    
+    .subNav{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        
+        p{
+            width: 80%;
+            font-style: italic;
+            opacity: .8;
+        }
+
+        .nav{
+            display: flex;
+            flex-direction: row;
+            width: fit-content;
+            justify-content: center;
+            height: 2.5rem;
+
+            .nav__btnLeft{
+                border-radius: .3rem 0 0 .3rem;
+                height: 100%;
+                font-size: 1.3rem;
+                align-items: center;
+                border-right: 1px solid $fontColor;
+            }
+            .nav__btnRight{
+                border-radius: 0 .3rem .3rem 0;
+                height: 100%;
+                font-size: 1.3rem;
+                align-items: center;
+            }
+        }
+    }
+
+    .StartScreen__Currencies{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(clamp(50%, 500px, 90%), 1fr));
+
+        .currencyForm{
+            display: flex;
+            flex-direction: column;
+            width: 96%;
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid $additionalColor;
+            border-radius: 1rem;
+
+            .copyToCB-btn{
+                border-radius: 0 .3rem .3rem 0;
+                height: 100%;
+            }
+
+            .curName{
+                font-size: .8rem;
+                top: 30px;
+            }
+
+            .curInfo{
+                width:100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .curWrapper{
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                label{
+                    margin-right: .5rem;
+                    font-weight: 700;
+                }
+                            
+                input{
+                    width: 100%;
+                    font-size: 1rem;
+                    border: 1px solid rgba(99, 99, 255, 0);
+                    padding: .4rem;
+                    transition: all .3s ease-in-out;
+                }
+            
+                input:focus{
+                    border: 1px solid rgb(99, 99, 255);
+                }
+            
+            }
+        }
+    }
+}
+
+.title{
+    display: block;
+    text-align: center;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.settings{
+    background: $bgGradientLight;
+    min-height: 500px;
+    height: fit-content;
+    padding: 1rem;
+
+    *{
+        color: $bgColor;
+    }
+
+    .settings__wrapper{
+        border: 1px solid $additionalColor;
+        padding: 1rem;
+        border-radius: 1rem;
+        min-height: 40vh;
+        margin: auto;
+        width: clamp(60%, 600px, 94%);
+
+        h3{
+            font-weight: 500;
+            margin-left: .5rem;
+            margin-top: .5rem;
+        }
+
+        .settings__bookmarks__bookmark{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid $additionalColor;
+            border-radius: .4rem;
+            margin: .5rem 0;
+
+            p{
+                margin: 0 2rem;
+            }
+        }
+    }
+    
+    .curSearch{
+        position: relative;
+        width: 100%;
+
+        input{
+            width: 100%;
+            padding: .5rem;
+            background: $bgColor;
+            border-radius: 1rem;
+            font-size: 1.2rem;
+            color: $fontColor;
+            padding: .6rem 2rem;
+        }
+
+        .dropDown{
+            width: 85%;
+            position: absolute;
+            background: $bgColor;
+            max-height: 60vh;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            .list__cur{
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                padding: 0.4rem .6rem;
+                border-bottom: 1px solid grey;
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+            }
+
+
+            .list__cur:hover{
+                background: grey;
+            }
+            
+            *{
+                color: $fontColor;
+                font-weight: 400;
+            }
+        }
+        ::-webkit-scrollbar{
+            width: 0;
+        }
+    }
+
+
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    row-gap: 2rem;
+    padding: 2rem 0;
+    
+    h3{
+        color: $additionalColor;
+        font-weight: 500;
+    }
+    .footer__contacts{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(clamp(25%, 300px, 100%), 1fr));
+
+        span{
+            background: rgb(23, 23, 23);
+            padding: .3rem 1rem;
+            border-radius: 1rem;
+
+        }
+    }
+}
+
+input[type=search]::-webkit-search-cancel-button
+{
+    -webkit-appearance: none;
+}
+
